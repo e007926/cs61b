@@ -118,7 +118,18 @@ public class BSTMap<K extends Comparable<K>, V> implements Map61B<K, V> {
         L.size = 1 + size(L.left) + size(L.right);
         return L;
     }
-
+    //Need to test
+    public void printInOrder(){
+        printInOrder(root);
+    }
+    private void printInOrder(Node node){
+        if(node == null){
+            return;
+        }
+        printInOrder(node.left);
+        System.out.println(node.key.toString() + " -> " + node.val.toString());
+        printInOrder(node.right);
+    }
     /* Returns a Set view of the keys contained in this map. Not required for Lab 7.
      * If you don't implement this, throw an UnsupportedOperationException. */
     @Override
